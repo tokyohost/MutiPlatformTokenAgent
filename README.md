@@ -1,10 +1,12 @@
-# 这是一个使用agent 方式hook 某翼平台和ruoyi-vue-plus 登录接口获取token 并存储到redis 中的工具
+# MutiPlatformTokenAgent
+- 这是一个使用agent 方式hook 某平台和 ruoyi-vue-plus快速开发平台 登录接口获取token 并存储到redis 中的工具
 ### 解决的问题
 - 适用于简单的多平台API调用获取Token集成的场景，不用那么重的引入OAuth2/SSO 客户端依赖
 - 适用于没有统一认证网关的场景
 - 适用于无法修改平台源码的场景
 - 适用于无法使用浏览器登录获取token 的场景
 - 无需逆向JS 登录验证的场景
+- 无需密码，只需要账户名即可获取/刷新 token
 ### 支持的平台
 - 某翼平台 6.9.x 及以上版本
 - Ruoyi-vue-plus 5.X 版本
@@ -73,7 +75,7 @@ passwordOutSideConfig 配置文件格式
 
 ```yaml
 username: admin #账户名
-password:  #密码 比翼平台可不用填密码
+password:  #密码 不需要密码了，用户名就可以获取token了。
 tokenRedisKey: "ctsi:token" #存储token 的redis key 名称
 redisHost: localhost #redis 地址
 redisPort: 6379 #redis 端口
