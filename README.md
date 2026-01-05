@@ -45,28 +45,28 @@ mvn clean package -DskipTests
 指定agent 内部配置文件方式：
 ```bash
 #指定agent 内部配置文件方式：
-java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\platformAuthAgent-1.0.jar=passwordConfig=ctsi-pwd.yml
+java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\MutiPlatformTokenAgent-1.0.jar=passwordConfig=ctsi-pwd.yml
  -jar .\cloud_sentinel_api-6.9.3-SNAPSHOT.jar
 ```
 启动时指定账号名方式：必须指定tokenRedisKey，否则无法将获取的token 写入redis中
 ```bash
 #启动时指定账号名方式：必须指定tokenRedisKey，否则无法将获取的token 写入redis中
-java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\platformAuthAgent-1.0.jar=username=admin,password=123456,tokenRedisKey="ctsi:token" -jar .\cloud_sentinel_api-6.9.3-SNAPSHOT.jar
+java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\MutiPlatformTokenAgent-1.0.jar=username=admin,password=123456,tokenRedisKey="ctsi:token" -jar .\cloud_sentinel_api-6.9.3-SNAPSHOT.jar
 ```
 启动时指定外部配置文件方式
 ```bash
 #启动时指定账号名方式：必须指定tokenRedisKey，否则无法将获取的token 写入redis中
-java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\platformAuthAgent-1.0.jar=passwordOutSideConfig=outsideConfig.yml -jar .\cloud_sentinel_api-6.9.3-SNAPSHOT.jar
+java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\MutiPlatformTokenAgent-1.0.jar=passwordOutSideConfig=outsideConfig.yml -jar .\cloud_sentinel_api-6.9.3-SNAPSHOT.jar
 ```
 
 ruoyivuePlus 启动方式
 cmd 
 ```bash
-java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\platformAuthAgent-1.0.jar=passwordOutSideConfig=outsideConfigRuoyi.yml -Dspring.profiles.active=devtest -jar  .\ruoyi-admin.jar
+java -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\MutiPlatformTokenAgent-1.0.jar=passwordOutSideConfig=outsideConfigRuoyi.yml -Dspring.profiles.active=devtest -jar  .\ruoyi-admin.jar
  ```
 powershell 启动方式
 ```powershell
-java --% -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\platformAuthAgent-1.0.jar=passwordOutSideConfig=outsideConfigRuoyi.yml -Dspring.profiles.active=devtest -jar  .\ruoyi-admin.jar
+java --% -javaagent:E:\WorkSpace\platformAuthAgent\platformAuthAgent\target\MutiPlatformTokenAgent-1.0.jar=passwordOutSideConfig=outsideConfigRuoyi.yml -Dspring.profiles.active=devtest -jar  .\ruoyi-admin.jar
  ```
 
 passwordOutSideConfig 配置文件格式
