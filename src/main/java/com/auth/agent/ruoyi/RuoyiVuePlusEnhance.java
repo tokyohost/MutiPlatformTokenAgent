@@ -86,7 +86,7 @@ public class RuoyiVuePlusEnhance {
             Class<?> saloginParameterClass = classLoader.loadClass("cn.dev33.satoken.stp.parameter.SaLoginParameter");
             Object loginParameter = saloginParameterClass.newInstance();
             loginParameter.getClass().getMethod("setDeviceType", String.class).invoke(loginParameter, deviceType);
-            loginParameter.getClass().getMethod("setTimeout", long.class).invoke(loginParameter, authData.getTimeout());
+            loginParameter.getClass().getMethod("setTimeout", long.class).invoke(loginParameter, Long.parseLong(String.valueOf(authData.getTimeout())));
             loginParameter.getClass().getMethod("setExtra", String.class,Object.class).invoke(loginParameter, "clientid", authData.getClientId());
             //模拟上下文
             // 保存旧上下文（如果有）

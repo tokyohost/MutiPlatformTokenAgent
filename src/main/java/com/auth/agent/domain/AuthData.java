@@ -38,5 +38,5 @@ public class AuthData {
     /**
      * 若以plus token 失效时间 秒
      */
-    private Long timeout;
+    private Integer timeout;
 }

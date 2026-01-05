@@ -116,6 +116,9 @@ public class ConfigUtils {
                 Yaml yaml = new Yaml();
                 Map<String, Object> map = yaml.load(configFileAsStream);
                 Integer refushTokenTime =(Integer) map.get(Constant.REFUSH_TOKEN_TIME);
+                if (refushTokenTime == null) {
+                    return 300;
+                }
                 return refushTokenTime;
             } catch (IOException e) {
                 log.error("配置文件异常"+e);
@@ -147,7 +150,7 @@ public class ConfigUtils {
         String tenantAccount = "default";
         String clientId;
         String tenantId = "000000";
-        Long timeout = 10800L;
+        Integer timeout = 10800;
         //判断是否指定外部密码配置文件
         if (paramsMap.containsKey(Constant.PWD_CONFIG_FILE_OUT_SIDE_NAME)) {
             try {
@@ -159,7 +162,7 @@ public class ConfigUtils {
                 tenantAccount =(String) map.getOrDefault(Constant.PWD_CONFIG_FILE_TENANTACCOUNT,"default");
                 clientId =(String) map.getOrDefault(Constant.PWD_CONFIG_FILE_CLIENT_ID,null);
                 tenantId =(String) map.getOrDefault(Constant.PWD_CONFIG_FILE_TENANT_ID,"000000");
-                timeout = Long.valueOf((Integer)map.getOrDefault(Constant.PWD_CONFIG_FILE_TIMEOUT,10800L));
+                timeout = (Integer)map.getOrDefault(Constant.PWD_CONFIG_FILE_TIMEOUT,10800);
                 AuthData authData = new AuthData();
                 authData.setUsername(username);
                 authData.setPassword(password);
