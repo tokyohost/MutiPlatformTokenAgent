@@ -1,0 +1,13 @@
+username: admin #账户名
+password:  #密码 比翼平台可不用填密码
+tokenRedisKey: "ruoyi:token" #存储token 的redis key 名称
+redisHost: localhost #redis 地址
+redisPort: 6379 #redis 端口
+redisPassword: "" #redis 密码
+redisDatabase: 0 #redis 库
+clientId: e5cd7e4891bf95d1d19206ce24a7b32e #RuoyiVuePlus 平台clientId
+grantType: password #授权类型，默认password
+tenantId: "000000" #租户ID，默认000000
+timeout: 10800 #过期时间，单位秒，默认3小时
+
+refushTokenTime: 300 #刷新token时间，单位秒，默认5分钟
