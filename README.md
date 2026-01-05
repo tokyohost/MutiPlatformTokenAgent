@@ -1,4 +1,5 @@
-# 这是一个使用agent 方式hook 某翼平台和ruoyi-vue-plus 登录接口获取token 并存储到redis 中的工具
+# MutiPlatformTokenAgent
+-这是一个使用agent 方式hook 某平台和 ruoyi-vue-plus快速开发平台 登录接口获取token 并存储到redis 中的工具
 ### 解决的问题
 - 适用于简单的多平台API调用获取Token集成的场景，不用那么重的引入OAuth2/SSO 客户端依赖
 - 适用于没有统一认证网关的场景
